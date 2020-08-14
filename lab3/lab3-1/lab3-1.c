@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 int Help();
+int Quit();
 
 #define CMD_MAX_LEN 128
 #define DESC_LEN 1024
@@ -19,6 +20,7 @@ static tDataNode head[] =
 {
     {"help", "this ia a help cmd!", Help, &head[1]},
     {"version", "menu program v1.0", NULL, NULL},
+    {"quit", "Quit from menu", Quit, NULL},
     
 
 };
@@ -58,4 +60,8 @@ int Help(){
         p = p->next;
     }
     return 0;
+}
+
+int Quit(){
+    exit(0);
 }
